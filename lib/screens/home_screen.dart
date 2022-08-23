@@ -32,6 +32,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     final Size screenSize = MediaQuery.of(context).size;
     return Scaffold(
+      extendBodyBehindAppBar: true,
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.grey[500],
         child: Icon(Icons.cast),
@@ -44,9 +45,9 @@ class _HomeScreenState extends State<HomeScreen> {
       body: CustomScrollView(
         controller: _scrollController,
         slivers: [
-          // SliverToBoxAdapter(
-          //   child: ContentHeader(featureContent: sintelContent),
-          // ),
+          SliverToBoxAdapter(
+            child: ContentHeader(featureContent: sintelContent),
+          ),
         ],
       ),
     );
