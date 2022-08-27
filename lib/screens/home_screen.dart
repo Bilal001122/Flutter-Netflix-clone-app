@@ -34,7 +34,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       extendBodyBehindAppBar: true,
       floatingActionButton: FloatingActionButton(
-        backgroundColor: Colors.grey[500],
+        backgroundColor: Colors.grey[800],
         child: Icon(Icons.cast),
         onPressed: () {},
       ),
@@ -56,6 +56,28 @@ class _HomeScreenState extends State<HomeScreen> {
               child: Previews(
                 title: 'Previews',
                 contentList: previews,
+              ),
+            ),
+          ),
+          SliverToBoxAdapter(
+            child: ContentList(
+              title: 'My List',
+              contentList: myList,
+            ),
+          ),
+          SliverToBoxAdapter(
+            child: ContentList(
+              title: 'Netflix Originals',
+              contentList: originals,
+              isOriginals: true,
+            ),
+          ),
+          SliverPadding(
+            padding: EdgeInsets.only(bottom: 20),
+            sliver: SliverToBoxAdapter(
+              child: ContentList(
+                title: 'Trending',
+                contentList: trending,
               ),
             ),
           ),
