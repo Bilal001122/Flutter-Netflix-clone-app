@@ -5,7 +5,8 @@ class Previews extends StatelessWidget {
   final String title;
   final List<Content> contentList;
 
-  Previews({required this.title, required this.contentList});
+  Previews({required Key key, required this.title, required this.contentList})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {

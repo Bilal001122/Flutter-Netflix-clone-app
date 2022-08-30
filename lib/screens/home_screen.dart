@@ -3,6 +3,7 @@ import 'package:netflix_clone_app/data/data.dart';
 import 'package:netflix_clone_app/widgets/widgets.dart';
 
 class HomeScreen extends StatefulWidget {
+  HomeScreen({required Key key}) : super(key: key);
   @override
   State<HomeScreen> createState() => _HomeScreenState();
 }
@@ -56,6 +57,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             sliver: SliverToBoxAdapter(
               child: Previews(
+                key: PageStorageKey('previews'),
                 title: 'Previews',
                 contentList: previews,
               ),
@@ -63,12 +65,14 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           SliverToBoxAdapter(
             child: ContentList(
+              key: PageStorageKey('myList'),
               title: 'My List',
               contentList: myList,
             ),
           ),
           SliverToBoxAdapter(
             child: ContentList(
+              key: PageStorageKey('originals'),
               title: 'Netflix Originals',
               contentList: originals,
               isOriginals: true,
@@ -78,6 +82,7 @@ class _HomeScreenState extends State<HomeScreen> {
             padding: EdgeInsets.only(bottom: 20),
             sliver: SliverToBoxAdapter(
               child: ContentList(
+                key: PageStorageKey('trending'),
                 title: 'Trending',
                 contentList: trending,
               ),
